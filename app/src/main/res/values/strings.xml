@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Skyscanner</string>
+    <string name="sort_and_filter"><![CDATA[Sort & Filter]]></string>
+    <string name="click_to_retry">Click to Retry</string>
+</resources>

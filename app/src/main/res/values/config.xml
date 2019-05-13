@@ -1,0 +1,5 @@
+<resources>
+    <!--<string name="API_CREATE_SESSION">session</string>-->
+    <string name="API_CREATE_SESSION">http://partners.api.skyscanner.net/apiservices/</string>
+    <string name="API_KEY">ss630745725358065467897349852985</string>
+</resources>

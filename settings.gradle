@@ -1,0 +1,1 @@
+include ':app', ':viewModel', ':entity', ':interactor', ':repository', ':repositoryImpl'

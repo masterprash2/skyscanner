@@ -1,0 +1,285 @@
+{
+  "SessionKey": "46a634a4-efff-4450-ae5d-d1be94a7506f",
+  "Query": {
+    "Country": "GB",
+    "Currency": "GBP",
+    "Locale": "en-GB",
+    "Adults": 1,
+    "Children": 0,
+    "Infants": 0,
+    "OriginPlace": "2343",
+    "DestinationPlace": "13554",
+    "OutboundDate": "2019-05-10",
+    "InboundDate": "2019-05-30",
+    "LocationSchema": "Default",
+    "CabinClass": "economy",
+    "GroupPricing": false
+  },
+  "Status": "UpdatesComplete",
+  "Itineraries": [
+    {
+      "OutboundLegId": "0",
+      "InboundLegId": "1",
+      "PricingOptions": [
+        {
+          "Agents": [
+            1
+          ],
+          "QuoteAgeInMinutes": 6,
+          "Price": 287,
+          "DeeplinkUrl": "deeplink"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "uri",
+        "Body": "body",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "1",
+      "InboundLegId": "2",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2
+          ],
+          "QuoteAgeInMinutes": 6,
+          "Price": 287,
+          "DeeplinkUrl": "deeplink"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "uri",
+        "Body": "body",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "2",
+      "InboundLegId": "3",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3
+          ],
+          "QuoteAgeInMinutes": 6,
+          "Price": 287,
+          "DeeplinkUrl": "deeplink"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "uri",
+        "Body": "body",
+        "Method": "PUT"
+      }
+    }
+  ],
+  "Legs": [
+    {
+      "Id": "1",
+      "SegmentIds": [
+        1
+      ],
+      "OriginStation": 11235,
+      "DestinationStation": 13554,
+      "Departure": "2019-05-10T15:20:00",
+      "Arrival": "2019-05-10T16:50:00",
+      "Duration": 90,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        881
+      ],
+      "OperatingCarriers": [
+        881
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 881
+        }
+      ]
+    },
+    {
+      "Id": "2",
+      "SegmentIds": [
+        2
+      ],
+      "OriginStation": 11235,
+      "DestinationStation": 13554,
+      "Departure": "2019-05-10T15:20:00",
+      "Arrival": "2019-05-10T16:50:00",
+      "Duration": 90,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        881
+      ],
+      "OperatingCarriers": [
+        881
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 881
+        }
+      ]
+    },
+    {
+      "Id": "3",
+      "SegmentIds": [
+        3
+      ],
+      "OriginStation": 11235,
+      "DestinationStation": 13554,
+      "Departure": "2019-05-10T15:20:00",
+      "Arrival": "2019-05-10T16:50:00",
+      "Duration": 90,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        881
+      ],
+      "OperatingCarriers": [
+        881
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 881
+        }
+      ]
+    }
+  ],
+  "Segments": [
+    {
+      "Id": 0,
+      "OriginStation": 11235,
+      "DestinationStation": 13554,
+      "DepartureDateTime": "2019-05-10T12:00:00",
+      "ArrivalDateTime": "2019-05-10T13:45:00",
+      "Carrier": 885,
+      "OperatingCarrier": 885,
+      "Duration": 105,
+      "FlightNumber": "2105",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 1,
+      "OriginStation": 13554,
+      "DestinationStation": 11154,
+      "DepartureDateTime": "2019-05-30T14:15:00",
+      "ArrivalDateTime": "2019-05-30T15:40:00",
+      "Carrier": 1033,
+      "OperatingCarrier": 1033,
+      "Duration": 85,
+      "FlightNumber": "165",
+      "JourneyMode": "Flight",
+      "Directionality": "Inbound"
+    },
+    {
+      "Id": 2,
+      "OriginStation": 11154,
+      "DestinationStation": 11235,
+      "DepartureDateTime": "2019-05-30T16:40:00",
+      "ArrivalDateTime": "2019-05-30T18:00:00",
+      "Carrier": 1033,
+      "OperatingCarrier": 1653,
+      "Duration": 80,
+      "FlightNumber": "3556",
+      "JourneyMode": "Flight",
+      "Directionality": "Inbound"
+    }
+  ],
+  "Carriers": [
+    {
+      "Id": 885,
+      "Code": "BE",
+      "Name": "Flybe",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/BE.png",
+      "DisplayCode": "BE"
+    },
+    {
+      "Id": 1033,
+      "Code": "EI",
+      "Name": "Aer Lingus",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/EI.png",
+      "DisplayCode": "EI"
+    },
+    {
+      "Id": 1653,
+      "Code": "RE",
+      "Name": "Stobart Air",
+      "ImageUrl": "https://s1.apideeplink.com/images/airlines/RE.png",
+      "DisplayCode": "RE"
+    }
+  ],
+  "Agents": [
+    {
+      "Id": 2363321,
+      "Name": "easyJet",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/easy.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 2409351,
+      "Name": "eurowings",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/eurw.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 2499522,
+      "Name": "Flybe",
+      "ImageUrl": "https://s1.apideeplink.com/images/websites/flyb.png",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    }
+  ],
+  "Places": [
+    {
+      "Id": 1,
+      "ParentId": 9168,
+      "Code": "ZRH",
+      "Type": "Airport",
+      "Name": "Zurich"
+    },
+    {
+      "Id": 2,
+      "Code": "AT",
+      "Type": "Country",
+      "Name": "Austria"
+    },
+    {
+      "Id": 3,
+      "ParentId": 5684,
+      "Code": "NWI",
+      "Type": "Airport",
+      "Name": "Norwich"
+    }
+  ],
+  "Currencies": [
+    {
+      "Code": "GBP",
+      "Symbol": "£",
+      "ThousandsSeparator": ",",
+      "DecimalSeparator": ".",
+      "SymbolOnLeft": true,
+      "SpaceBetweenAmountAndSymbol": false,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    }
+  ],
+  "ServiceQuery": {
+    "DateTime": "2019-05-06T14:46:16.0487071Z"
+  }
+}

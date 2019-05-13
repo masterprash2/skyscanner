@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+>
+    <data>
+        <variable name="model" type="com.skyscanner.challenge.screen.results.model.item.ItineraryModel"/>
+        <import type="com.skyscanner.challenge.screen.results.model.item.DirectionModel"/>
+    </data>
+    <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            app:cardBackgroundColor="@color/colorItemBackground"
+            app:cardElevation="5dp"
+            android:clickable="true"
+            android:layout_marginLeft="3dp"
+            android:background="?android:selectableItemBackground"
+            android:layout_marginRight="3dp"
+            app:cardUseCompatPadding="true"
+            android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/outboundTime"
+                    app:layout_constraintStart_toEndOf="@+id/outboundImageView"
+                    android:layout_marginStart="8dp"
+                    tools:text="15:35 - 17:00"
+                    android:textColor="@color/itemTitle"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@{model.outboundFlight.timeFrame}"/>
+            <com.skyscanner.challenge.ui.widget.NetworkImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:id="@+id/outboundImageView"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="16dp"
+                    app:layout_constraintTop_toTopOf="@+id/outboundTime"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/outboundFlightAgent"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@+id/outboundTime"
+                    app:layout_constraintStart_toEndOf="@+id/outboundImageView"
+                    android:layout_marginStart="8dp"
+                    tools:text="BUD-LGW, Wizz Air"
+                    android:textColor="@color/itemSubTitle"
+                    android:text="@{model.outboundFlight.name}"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:id="@+id/outboundFlightStops"
+                    app:layout_constraintTop_toTopOf="@+id/outboundTime"
+                    app:layout_constraintBottom_toBottomOf="@+id/outboundTime"
+                    tools:text="Stops"
+                    android:textStyle="bold"
+                    android:textColor="@color/itemTitle"
+                    android:textSize="16sp"
+                    android:text="@{model.outboundFlight.stops}"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/outboundFlightDuration"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@+id/outboundFlightStops"
+                    app:layout_constraintEnd_toEndOf="@+id/outboundFlightStops"
+                    app:layout_constraintStart_toStartOf="@+id/outboundFlightStops"
+                    tools:text="2h 25m"
+                    android:textColor="@color/itemSubTitle"
+                    android:text="@{model.outboundFlight.duration}"/>
+
+            <com.skyscanner.challenge.ui.widget.NetworkImageView
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:id="@+id/inboundImage"
+                    app:layout_constraintStart_toStartOf="@+id/outboundImageView"
+                    app:layout_constraintTop_toTopOf="@+id/inboundTime"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/inboundTime"
+                    app:layout_constraintStart_toEndOf="@+id/inboundImage"
+                    android:layout_marginStart="8dp"
+                    tools:text="15:35 - 17:00"
+                    android:textColor="@color/itemTitle"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_marginTop="25dp"
+                    app:layout_constraintTop_toBottomOf="@+id/outboundFlightAgent"
+                    android:text="@{model.inboundFlight.timeFrame}"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/inboundFlightAgent"
+                    app:layout_constraintStart_toEndOf="@+id/inboundImage"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@+id/inboundTime"
+                    tools:text="BUD-LGW, Wizz Air"
+                    android:textColor="@color/itemSubTitle"
+                    android:text="@{model.inboundFlight.name}"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:id="@+id/inboundFlightStops"
+                    app:layout_constraintTop_toTopOf="@+id/inboundTime"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/inboundTime"
+                    tools:text="Stops"
+                    android:textColor="@color/itemTitle"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="@{model.inboundFlight.stops}"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    app:layout_constraintEnd_toEndOf="@+id/inboundFlightStops"
+                    android:id="@+id/inboundFlightDuration"
+                    app:layout_constraintStart_toStartOf="@+id/inboundFlightStops"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintTop_toBottomOf="@+id/inboundFlightStops"
+                    tools:text="2h 25m"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:textColor="@color/itemSubTitle"
+                    android:text="@{model.inboundFlight.duration}"/>
+
+            <View
+                    android:id="@+id/divider"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/inboundFlightAgent"
+                    android:layout_marginTop="15dp"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/itineraryRating"
+                    app:layout_constraintStart_toEndOf="@+id/itineraryRatingImage"
+                    android:layout_marginStart="8dp"
+                    tools:text="10.0"
+                    android:textStyle="bold"
+                    android:textColor="@color/itemTitle"
+                    android:textSize="16sp"
+                    android:layout_marginTop="20dp"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    android:text="@{model.rating}"/>
+            <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="0dp"
+                    tools:srcCompat="@tools:sample/avatars"
+                    android:src="@drawable/smiley"
+                    android:id="@+id/itineraryRatingImage"
+                    app:layout_constraintBottom_toBottomOf="@+id/itineraryRating"
+                    app:layout_constraintStart_toStartOf="@+id/inboundImage"
+                    android:layout_marginStart="2dp"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintTop_toTopOf="@+id/itineraryRating"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/itineraryCost" android:textSize="16sp"
+                    tools:text="£35"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/divider"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/itemTitle"
+                    android:text="@{model.price}"/>
+
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:id="@+id/agent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginEnd="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/itineraryCost"
+                    android:layout_marginBottom="8dp"
+                    tools:text="via Wizzair.com"
+                    android:textColor="@color/itemSubTitle"
+                    android:text="@{model.agent}"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
