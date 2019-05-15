@@ -1,4 +1,4 @@
-package com.skyscanner.interactor
+package com.skyscanner.viewmodel.results
 
 import com.skyscanner.challenge.entity.network.request.CabinClass
 import com.skyscanner.entity.request.FlightQuery

@@ -2,6 +2,7 @@ package com.skyscanner.challenge
 
 import android.view.View
 import androidx.lifecycle.Lifecycle
+import androidx.test.espresso.Espresso.onIdle
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.skyscanner.challenge.databinding.ActivityFlightResultsBinding
@@ -25,6 +26,7 @@ class ActivityViewBindingTest {
             val binding = ActivityFlightResultsBinding.inflate(it.layoutInflater);
             it.setContentView(binding.root)
             validateDataMapping(binding)
+            it.setContentView(View(it))
         }
     }
 
@@ -98,6 +100,7 @@ class ActivityViewBindingTest {
 
     @After
     fun tearDown() {
+
     }
 
 

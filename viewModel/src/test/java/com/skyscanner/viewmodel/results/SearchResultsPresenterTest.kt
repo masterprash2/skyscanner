@@ -47,10 +47,12 @@ class SearchResultsPresenterTest {
         dateIn.set(Calendar.MONTH, Calendar.NOVEMBER)
         dateIn.set(Calendar.DATE, 16)
         dateIn.set(Calendar.YEAR, 2019)
+        dateIn.set(Calendar.HOUR_OF_DAY, 12)
         val dateOut = Calendar.getInstance();
         dateOut.set(Calendar.YEAR, 2019)
         dateOut.set(Calendar.MONTH, Calendar.NOVEMBER)
         dateOut.set(Calendar.DATE, 12)
+        dateOut.set(Calendar.HOUR_OF_DAY, 12)
 
         val query = FlightQuery(
             destinationPlace = "des",

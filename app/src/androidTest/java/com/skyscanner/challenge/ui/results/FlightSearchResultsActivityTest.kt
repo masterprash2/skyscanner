@@ -37,7 +37,6 @@ class FlightSearchResultsActivityTest {
             InstrumentationRegistry.getInstrumentation().targetContext.applicationContext as SkyscannerTestApplication
         val skyscannerTestAppComponent = skyscannerTestApplication.androidInjector as SkyscannerTestAppComponent
         flightApiTestHelper = skyscannerTestAppComponent.flightApiHelper()
-
     }
 
     @Test

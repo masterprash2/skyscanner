@@ -1,5 +1,6 @@
 package com.skyscanner.challenge
 
+import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.test.ext.junit.rules.activityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -65,7 +66,6 @@ class RecyclerItemViewBindingTest {
 
     @After
     fun tearDown() {
-        activityScenario.scenario.close()
     }
 
 

@@ -8,12 +8,11 @@ import com.skyscanner.entity.response.Response
 import com.skyscanner.entity.response.SessionResponse
 import com.skyscanner.interactor.CreateSessionInteractor
 import com.skyscanner.interactor.GetFlightsInteractor
-import com.skyscanner.interactor.TestDataHelper
-import com.skyscanner.interactor.TestDataHelper.Companion.dummyFlightResponse
 import com.skyscanner.interactor.utils.TransformationUtils
 import com.skyscanner.model.SessionModel
 import com.skyscanner.repository.FlightRepository
 import com.skyscanner.repository.PlatformUtils
+import com.skyscanner.viewmodel.results.TestDataHelper.Companion.dummyFlightResponse
 import com.skyscanner.viewmodel.results.data.SearchResultsData
 import com.skyscanner.viewmodel.results.mock.MockPlatformImpl
 import io.reactivex.Observable
@@ -173,13 +172,17 @@ class SearchResultsViewModelTest {
 
     fun dummyQuery(): FlightQuery {
         val dateIn = Calendar.getInstance();
+        dateIn.timeZone = TimeZone.getTimeZone("GMT")
         dateIn.set(Calendar.MONTH, Calendar.NOVEMBER)
         dateIn.set(Calendar.DATE, 15)
         dateIn.set(Calendar.YEAR, 2019)
+        dateIn.set(Calendar.HOUR_OF_DAY,12)
         val dateOut = Calendar.getInstance();
+        dateOut.timeZone = TimeZone.getTimeZone("GMT")
         dateOut.set(Calendar.YEAR, 2019)
         dateOut.set(Calendar.MONTH, Calendar.NOVEMBER)
         dateOut.set(Calendar.DATE, 13)
+        dateOut.set(Calendar.HOUR_OF_DAY,12)
 
         return FlightQuery(
             destinationPlace = "des",
