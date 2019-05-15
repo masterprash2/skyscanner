@@ -3,8 +3,8 @@ package com.skyscanner.challenge
 import android.view.View
 import androidx.lifecycle.Lifecycle
 import androidx.test.ext.junit.rules.activityScenarioRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.skyscanner.challenge.databinding.ActivityFlightResultsBinding
-import com.skyscanner.challenge.ui.TestActivity
 import com.skyscanner.viewmodel.results.data.SearchResultsData
 import org.junit.After
 import org.junit.Assert.*
@@ -12,11 +12,11 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-@RunWith(androidx.test.runner.AndroidJUnit4::class)
+@RunWith(AndroidJUnit4::class)
 class ActivityViewBindingTest {
 
     @get:Rule
-    var activityScenario = activityScenarioRule<TestActivity>()
+    var activityScenario = activityScenarioRule<BlankActivity>()
 
     @Test
     fun dataBindingWithViewModel() {
@@ -98,7 +98,6 @@ class ActivityViewBindingTest {
 
     @After
     fun tearDown() {
-        activityScenario.scenario.close()
     }
 
 

@@ -15,6 +15,7 @@ import com.skyscanner.model.SessionModel
 import com.skyscanner.repository.FlightRepository
 import com.skyscanner.repository.PlatformUtils
 import com.skyscanner.viewmodel.results.data.SearchResultsData
+import com.skyscanner.viewmodel.results.mock.MockPlatformImpl
 import io.reactivex.Observable
 import org.junit.After
 import org.junit.Assert
@@ -22,6 +23,7 @@ import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 class SearchResultsViewModelTest {
 
@@ -37,9 +39,9 @@ class SearchResultsViewModelTest {
     @Before
     fun setUp() {
         flightRepository = Mockito.mock(FlightRepository::class.java)
-        platformUtils = Mockito.mock(PlatformUtils::class.java)
+        platformUtils = MockPlatformImpl()
         transformationUtils = TransformationUtils(platformUtils)
-        getFlightsInteractor = GetFlightsInteractor(flightRepository, transformationUtils)
+        getFlightsInteractor = GetFlightsInteractor(flightRepository, transformationUtils,platformUtils)
         createSessionInteractor = CreateSessionInteractor(flightRepository)
         data = SearchResultsData()
         presenter = SearchResultsPresenter(data, platformUtils)
@@ -50,8 +52,6 @@ class SearchResultsViewModelTest {
     fun searchFlightSuccess() {
         var query = dummyQuery();
         query = query.copy(adults = 2)
-        whenever(platformUtils.formatDate("dd MMM", query.inboundDate!!,query.locale)).thenReturn("16 Nov")
-        whenever(platformUtils.formatDate("dd MMM", query.outboundDate,query.locale)).thenReturn("12 Nov")
 
         val sessionResponse = Response(SessionModel("sessionUrl", SessionResponse(null, null)), true)
         whenever(flightRepository.createSession(any())).thenReturn(Observable.just(sessionResponse))
@@ -67,15 +67,13 @@ class SearchResultsViewModelTest {
         Assert.assertNotNull(data.toolbarSubTitle.get())
         Assert.assertNotNull(data.toolbarTitle.get())
         Assert.assertEquals("ORI - des", data.toolbarTitle.get())
-        Assert.assertEquals("12 Nov - 16 Nov, 2 adults, economy", data.toolbarSubTitle.get())
+        Assert.assertEquals("13 Nov - 15 Nov, 2 adults, economy", data.toolbarSubTitle.get())
     }
 
 
     @Test
     fun searchFlightSessionFailed() {
         val query = dummyQuery();
-        whenever(platformUtils.formatDate("dd MMM", query.inboundDate!!,query.locale)).thenReturn("15 Nov")
-        whenever(platformUtils.formatDate("dd MMM", query.outboundDate,query.locale)).thenReturn("13 Nov")
 
         val sessionResponse = Response(SessionModel("sessionUrl", SessionResponse(null, null)), false)
         whenever(flightRepository.createSession(any())).thenReturn(Observable.just(sessionResponse))
@@ -96,8 +94,6 @@ class SearchResultsViewModelTest {
 
     @Test
     fun searchFlightResultsFailed() {val query = dummyQuery();
-        whenever(platformUtils.formatDate("dd MMM", query.inboundDate!!,query.locale)).thenReturn("15 Nov")
-        whenever(platformUtils.formatDate("dd MMM", query.outboundDate,query.locale)).thenReturn("13 Nov")
 
         val sessionResponse = Response(SessionModel("sessionUrl", SessionResponse(null, null)), true)
         whenever(flightRepository.createSession(any())).thenReturn(Observable.just(sessionResponse))
@@ -178,12 +174,12 @@ class SearchResultsViewModelTest {
     fun dummyQuery(): FlightQuery {
         val dateIn = Calendar.getInstance();
         dateIn.set(Calendar.MONTH, Calendar.NOVEMBER)
-        dateIn.set(Calendar.DATE, 16)
+        dateIn.set(Calendar.DATE, 15)
         dateIn.set(Calendar.YEAR, 2019)
         val dateOut = Calendar.getInstance();
         dateOut.set(Calendar.YEAR, 2019)
         dateOut.set(Calendar.MONTH, Calendar.NOVEMBER)
-        dateOut.set(Calendar.DATE, 12)
+        dateOut.set(Calendar.DATE, 13)
 
         return FlightQuery(
             destinationPlace = "des",

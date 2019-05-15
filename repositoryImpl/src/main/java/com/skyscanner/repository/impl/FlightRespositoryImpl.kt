@@ -42,7 +42,6 @@ class FlightRespositoryImpl @Inject constructor(
         map.put("children", query.children.toString());
         map.put("infants", query.infants.toString());
         map.put("locationSchema", query.locationSchema);
-
         map.put("apiKey", configGateway.getApiKey())
         return flightApi.createSession(map).subscribeOn(Schedulers.io()).map {
             val success = it.isSuccessful;

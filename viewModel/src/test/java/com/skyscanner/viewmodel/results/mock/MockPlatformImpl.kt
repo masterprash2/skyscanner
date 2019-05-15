@@ -1,4 +1,4 @@
-package com.skyscanner.interactor.mock
+package com.skyscanner.viewmodel.results.mock
 
 import android.net.Uri
 import com.skyscanner.repository.PlatformUtils

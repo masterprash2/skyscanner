@@ -16,21 +16,26 @@ class RetrofitModule {
 
     @Provides
     @RetrofitScope
-    fun okhttp() : OkHttpClient {
+    fun okhttp(): OkHttpClient {
         return OkHttpClient.Builder().build()
     }
 
     @Provides
     @RetrofitScope
-    fun flightApi(configGateway: ConfigGateway, okHttpClient: OkHttpClient): FlightApi {
+    fun retrofit(configGateway: ConfigGateway, okHttpClient: OkHttpClient): Retrofit {
         val moshi = Moshi.Builder().build()
-        val build = Retrofit.Builder()
+        return Retrofit.Builder()
             .baseUrl(configGateway.getCreateSessionUrl())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .client(okHttpClient)
             .build()
-        return build.create(FlightApi::class.java)
+    }
+
+    @Provides
+    @RetrofitScope
+    fun flightApi(retrofit: Retrofit): FlightApi {
+        return retrofit.create(FlightApi::class.java)
     }
 
 

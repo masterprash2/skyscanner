@@ -12,8 +12,12 @@ open class SkyscannerApplication : DaggerApplication() {
     lateinit var androidInjector: AndroidInjector<SkyscannerApplication>
 
     override fun onCreate() {
-        androidInjector = DaggerSkyscannerAppComponent.factory().create(this)
+        androidInjector = createComponent()
         super.onCreate()
+    }
+
+    open fun createComponent(): AndroidInjector<SkyscannerApplication> {
+        return DaggerSkyscannerAppComponent.factory().create(this)
     }
 
 }

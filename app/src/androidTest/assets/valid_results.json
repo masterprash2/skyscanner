@@ -1,0 +1,334 @@
+{
+  "SessionKey": "46a634a4-efff-4450-ae5d-d1be94a7506f",
+  "Query": {
+    "Country": "GB",
+    "Currency": "GBP",
+    "Locale": "en-GB",
+    "Adults": 1,
+    "Children": 0,
+    "Infants": 0,
+    "OriginPlace": "2343",
+    "DestinationPlace": "13554",
+    "OutboundDate": "2019-05-10",
+    "InboundDate": "2019-05-30",
+    "LocationSchema": "Default",
+    "CabinClass": "economy",
+    "GroupPricing": false
+  },
+  "Status": "UpdatesComplete",
+  "Itineraries": [
+    {
+      "OutboundLegId": "0",
+      "InboundLegId": "1",
+      "PricingOptions": [
+        {
+          "Agents": [
+            1
+          ],
+          "QuoteAgeInMinutes": 6,
+          "Price": 27,
+          "DeeplinkUrl": "deeplink"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "uri",
+        "Body": "body",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "1",
+      "InboundLegId": "2",
+      "PricingOptions": [
+        {
+          "Agents": [
+            2
+          ],
+          "QuoteAgeInMinutes": 6,
+          "Price": 27,
+          "DeeplinkUrl": "deeplink"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "uri",
+        "Body": "body",
+        "Method": "PUT"
+      }
+    },
+    {
+      "OutboundLegId": "2",
+      "InboundLegId": "3",
+      "PricingOptions": [
+        {
+          "Agents": [
+            3
+          ],
+          "QuoteAgeInMinutes": 6,
+          "Price": 347,
+          "DeeplinkUrl": "deeplink"
+        }
+      ],
+      "BookingDetailsLink": {
+        "Uri": "uri",
+        "Body": "body",
+        "Method": "PUT"
+      }
+    }
+  ],
+  "Legs": [
+    {
+      "Id": "0",
+      "SegmentIds": [
+        0
+      ],
+      "OriginStation": 0,
+      "DestinationStation": 1,
+      "Departure": "2019-05-10T09:20:00",
+      "Arrival": "2019-05-10T11:50:00",
+      "Duration": 200,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        0
+      ],
+      "OperatingCarriers": [
+        0
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 0
+        }
+      ]
+    },
+    {
+      "Id": "1",
+      "SegmentIds": [
+        1
+      ],
+      "OriginStation": 1,
+      "DestinationStation": 2,
+      "Departure": "2019-05-10T12:20:00",
+      "Arrival": "2019-05-10T13:50:00",
+      "Duration": 350,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        1
+      ],
+      "OperatingCarriers": [
+        1
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 1
+        }
+      ]
+    },
+    {
+      "Id": "2",
+      "SegmentIds": [
+        2
+      ],
+      "OriginStation": 2,
+      "DestinationStation": 3,
+      "Departure": "2019-05-10T14:20:00",
+      "Arrival": "2019-05-10T18:50:00",
+      "Duration": 450,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        2
+      ],
+      "OperatingCarriers": [
+        2
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 2
+        }
+      ]
+    },
+    {
+      "Id": "3",
+      "SegmentIds": [
+        3
+      ],
+      "OriginStation": 1,
+      "DestinationStation": 3,
+      "Departure": "2019-05-10T19:20:00",
+      "Arrival": "2019-05-10T23:50:00",
+      "Duration": 90,
+      "JourneyMode": "Flight",
+      "Stops": [],
+      "Carriers": [
+        3
+      ],
+      "OperatingCarriers": [
+        3
+      ],
+      "Directionality": "Outbound",
+      "FlightNumbers": [
+        {
+          "FlightNumber": "1453",
+          "CarrierId": 3
+        }
+      ]
+    }
+  ],
+  "Segments": [
+    {
+      "Id": 0,
+      "OriginStation": 0,
+      "DestinationStation": 1,
+      "DepartureDateTime": "2019-05-10T12:00:00",
+      "ArrivalDateTime": "2019-05-10T13:45:00",
+      "Carrier": 0,
+      "OperatingCarrier": 0,
+      "Duration": 105,
+      "FlightNumber": "2105",
+      "JourneyMode": "Flight",
+      "Directionality": "Outbound"
+    },
+    {
+      "Id": 1,
+      "OriginStation": 1,
+      "DestinationStation": 2,
+      "DepartureDateTime": "2019-05-30T14:15:00",
+      "ArrivalDateTime": "2019-05-30T15:40:00",
+      "Carrier": 1,
+      "OperatingCarrier": 1,
+      "Duration": 85,
+      "FlightNumber": "165",
+      "JourneyMode": "Flight",
+      "Directionality": "Inbound"
+    },
+    {
+      "Id": 2,
+      "OriginStation": 2,
+      "DestinationStation": 3,
+      "DepartureDateTime": "2019-05-30T16:40:00",
+      "ArrivalDateTime": "2019-05-30T18:00:00",
+      "Carrier": 2,
+      "OperatingCarrier": 2,
+      "Duration": 80,
+      "FlightNumber": "3556",
+      "JourneyMode": "Flight",
+      "Directionality": "Inbound"
+    }
+  ],
+  "Carriers": [
+    {
+      "Id": 0,
+      "Code": "BE",
+      "Name": "Flybe",
+      "ImageUrl": "imageUrl1",
+      "DisplayCode": "BE"
+    },
+    {
+      "Id": 1,
+      "Code": "EI",
+      "Name": "Aer Lingus",
+      "ImageUrl": "imageUrl2",
+      "DisplayCode": "EI"
+    },
+    {
+      "Id": 2,
+      "Code": "RE",
+      "Name": "Stobart Air",
+      "ImageUrl": "imageUrl3",
+      "DisplayCode": "RE"
+    }
+	,
+    {
+      "Id": 3,
+      "Code": "RE",
+      "Name": "Stobart Air",
+      "ImageUrl": "imageUrl4",
+      "DisplayCode": "RE"
+    }
+  ],
+  "Agents": [
+    {
+      "Id": 0,
+      "Name": "easyJet",
+      "ImageUrl": "imageUrl1",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 1,
+      "Name": "eurowings",
+      "ImageUrl": "imageUrl2",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 2,
+      "Name": "Flybe",
+      "ImageUrl": "imageUrl3",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    },
+    {
+      "Id": 3,
+      "Name": "Flybe",
+      "ImageUrl": "4",
+      "Status": "UpdatesComplete",
+      "OptimisedForMobile": true,
+      "Type": "Airline"
+    }
+  ],
+  "Places": [
+    {
+      "Id": 0,
+      "ParentId": 9168,
+      "Code": "ZRH",
+      "Type": "Airport",
+      "Name": "Zurich"
+    },
+    {
+      "Id": 1,
+      "ParentId": 9168,
+      "Code": "ZRH",
+      "Type": "Airport",
+      "Name": "Zurich"
+    },
+    {
+      "Id": 2,
+      "Code": "AT",
+      "Type": "Country",
+      "Name": "Austria"
+    },
+    {
+      "Id": 3,
+      "ParentId": 5684,
+      "Code": "NWI",
+      "Type": "Airport",
+      "Name": "Norwich"
+    }
+  ],
+  "Currencies": [
+    {
+      "Code": "GBP",
+      "Symbol": "£",
+      "ThousandsSeparator": ",",
+      "DecimalSeparator": ".",
+      "SymbolOnLeft": true,
+      "SpaceBetweenAmountAndSymbol": false,
+      "RoundingCoefficient": 0,
+      "DecimalDigits": 2
+    }
+  ],
+  "ServiceQuery": {
+    "DateTime": "2019-05-06T14:46:16.0487071Z"
+  }
+}

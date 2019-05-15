@@ -43,7 +43,7 @@ class FlightSearchResultsActivity : DaggerAppCompatActivity() {
         setSupportActionBar(viewBinder.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDefaultDisplayHomeAsUpEnabled(true)
-        viewBinder.toolbar.setNavigationOnClickListener { view -> finish() }
+        viewBinder.toolbar.setNavigationOnClickListener { finish() }
     }
 
     private fun setupSearchResultsView() {

@@ -2,10 +2,9 @@ package com.skyscanner.challenge
 
 import androidx.lifecycle.Lifecycle
 import androidx.test.ext.junit.rules.activityScenarioRule
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.skyscanner.challenge.databinding.ItemFlightResultBinding
-import com.skyscanner.challenge.screen.results.model.item.DirectionModel
 import com.skyscanner.challenge.screen.results.model.item.ItineraryModel
-import com.skyscanner.challenge.ui.TestActivity
 import com.skyscanner.challenge.ui.results.ItineraryViewHolder
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -14,11 +13,11 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import java.util.*
 
-@RunWith(androidx.test.runner.AndroidJUnit4::class)
+@RunWith(AndroidJUnit4::class)
 class RecyclerItemViewBindingTest {
 
     @get:Rule
-    var activityScenario = activityScenarioRule<TestActivity>()
+    var activityScenario = activityScenarioRule<BlankActivity>()
 
     @Test
     fun dataBindingWithViewModel() {
@@ -31,7 +30,7 @@ class RecyclerItemViewBindingTest {
     }
 
     private fun createModelList(): List<ItineraryModel> {
-        return Arrays.asList(createItinerary1(),createItinerary2(),createItinerary3())
+        return Arrays.asList(createItinerary1(), createItinerary2(), createItinerary3())
     }
 
     private fun validateDataMapping(
@@ -68,8 +67,6 @@ class RecyclerItemViewBindingTest {
     fun tearDown() {
         activityScenario.scenario.close()
     }
-
-
 
 
 }

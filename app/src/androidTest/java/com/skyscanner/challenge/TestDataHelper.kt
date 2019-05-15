@@ -1,7 +1,14 @@
 package com.skyscanner.challenge
 
+import android.content.Context
+import android.content.res.AssetManager
+import com.skyscanner.challenge.entity.network.search.FlightResponse
 import com.skyscanner.challenge.screen.results.model.item.DirectionModel
 import com.skyscanner.challenge.screen.results.model.item.ItineraryModel
+import com.squareup.moshi.Moshi
+import okio.Buffer
+import okio.BufferedSource
+
 
 fun createItinerary1(): ItineraryModel {
 
@@ -92,3 +99,18 @@ fun createItineraryModel(
         price = price
     )
 }
+
+
+val FILE_FLIGHT_RESPONSE_VALID = "valid_results.json"
+val FILE_FLIGHT_RESPONSE_INVALID = "invalid_results.json"
+
+fun resourceFileToStream(assetManager: AssetManager ,fileName: String): BufferedSource {
+    return Buffer().readFrom(assetManager.open(fileName))
+}
+
+fun flightResponseFromAssets(context: Context, fileName: String) : FlightResponse {
+    val moshi = Moshi.Builder().build()
+    val adapter = moshi.adapter(FlightResponse::class.java)
+    return  adapter.fromJson(resourceFileToStream(context.assets,fileName))!!
+}
+
