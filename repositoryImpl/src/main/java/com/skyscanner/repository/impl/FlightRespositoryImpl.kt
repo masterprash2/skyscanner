@@ -44,7 +44,6 @@ class FlightRespositoryImpl @Inject constructor(
         map.put("locationSchema", query.locationSchema);
         map.put("apiKey", configGateway.getApiKey())
         return flightApi.createSession(map).subscribeOn(Schedulers.io()).map {
-            val success = it.isSuccessful;
             val sessionsUrl = it.headers().get("location")
             val body = it.body()
             if (it.isSuccessful && !sessionsUrl.isNullOrBlank()) {
@@ -53,7 +52,6 @@ class FlightRespositoryImpl @Inject constructor(
                     value = SessionModel(sessionsUrl, body!!)
                 )
             } else {
-                val string = String(it.errorBody()!!.bytes())
                 SkyResponse<SessionModel>(success = it.isSuccessful, value = null)
             }
         }

@@ -34,8 +34,8 @@ class TransformationUtils @Inject constructor(private val platformUtils: Platfor
         }
 
         return ItineraryModel(
-            agent = "via " + (agent?.name ?: ""),
-            price = (currency?.symbol ?: "") + price.toString(),
+            agent = "via " + agent.name,
+            price = currency.symbol + price.toString(),
             ratingImage = "",
             rating = "10.0",
             outboundFlight = mapLeg(outboundLeg, searchResult),

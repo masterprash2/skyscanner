@@ -115,7 +115,7 @@ class SearchResultsViewModelTest {
 
 
     @Test
-    fun searchFlightFirstFailedThenSuccess() {val query = dummyQuery();
+    fun searchFlightFirstFailedThenSuccess() {
         searchFlightResultsFailed()
         searchFlightSuccess()
     }

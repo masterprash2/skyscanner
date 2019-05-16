@@ -108,5 +108,5 @@ fun resourceFileToStream(classLoader: ClassLoader ,fileName: String): BufferedSo
 fun flightResponse(fileName: String) : FlightResponse {
     val moshi = Moshi.Builder().build()
     val adapter = moshi.adapter(FlightResponse::class.java)
-    return  adapter.fromJson(resourceFileToStream(moshi.javaClass.classLoader,fileName))!!
+    return  adapter.fromJson(resourceFileToStream(moshi.javaClass.classLoader!!,fileName))!!
 }
