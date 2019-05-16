@@ -54,6 +54,7 @@ dependencies {
     implementation "com.google.dagger:dagger-android:$rootProject.daggerVersion"
     implementation "com.google.dagger:dagger-android-support:$rootProject.daggerVersion"
     implementation "javax.inject:javax.inject:$rootProject.injectVersion"
+    implementation 'com.squareup.okio:okio:2.2.2'
 
 
     testImplementation 'junit:junit:4.12'

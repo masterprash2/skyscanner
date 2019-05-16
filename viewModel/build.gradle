@@ -57,6 +57,7 @@ dependencies {
     implementation project(':interactor')
     implementation project(':repository')
     implementation "javax.inject:javax.inject:$rootProject.injectVersion"
+    implementation 'com.squareup.okio:okio:2.2.2'
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'org.mockito:mockito-core:2.27.0'

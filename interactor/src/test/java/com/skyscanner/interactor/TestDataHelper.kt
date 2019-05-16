@@ -4,6 +4,7 @@ import com.skyscanner.challenge.entity.network.search.FlightResponse
 import com.skyscanner.challenge.screen.results.model.item.DirectionModel
 import com.skyscanner.challenge.screen.results.model.item.ItineraryModel
 import com.squareup.moshi.Moshi
+import okio.Buffer
 import okio.BufferedSource
 import okio.Okio
 
@@ -102,7 +103,7 @@ val FILE_FLIGHT_RESPONSE_VALID = "valid_results.json"
 val FILE_FLIGHT_RESPONSE_INVALID = "invalid_results.json"
 
 fun resourceFileToStream(classLoader: ClassLoader ,fileName: String): BufferedSource {
-    return Okio.buffer(Okio.source(classLoader.getResourceAsStream(fileName)))
+    return Buffer().readFrom(classLoader.getResourceAsStream(fileName))
 }
 
 fun flightResponse(fileName: String) : FlightResponse {
