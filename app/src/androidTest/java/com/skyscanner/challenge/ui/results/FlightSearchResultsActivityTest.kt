@@ -70,6 +70,11 @@ class FlightSearchResultsActivityTest {
         onIdle()
         activityScenario.scenario.onActivity { it.viewBinder.executePendingBindings() }
         onIdle()
+        try {
+            Thread.sleep(500)
+        }
+        catch (e : Exception) {}
+        activityScenario.scenario.onActivity { it.viewBinder.executePendingBindings() }
         onView(withId(R.id.retryButton)).check(matches(isDisplayed()))
     }
 

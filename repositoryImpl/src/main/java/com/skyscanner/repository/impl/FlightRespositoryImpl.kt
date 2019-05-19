@@ -64,7 +64,7 @@ class FlightRespositoryImpl @Inject constructor(
                 .appendQueryParameter("apiKey", configGateway.getApiKey())
                 .build()
                 .toString()
-        return flightApi.getFlights(finalUrl).map {
+        return flightApi.getFlights(finalUrl).subscribeOn(Schedulers.io()).map {
             SkyResponse(it.body(), it.isSuccessful)
         }
     }

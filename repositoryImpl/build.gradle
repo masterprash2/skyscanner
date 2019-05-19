@@ -56,6 +56,8 @@ dependencies {
     implementation "javax.inject:javax.inject:$rootProject.injectVersion"
     implementation 'com.squareup.okio:okio:2.2.2'
 
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.0.0-alpha01'
+
 
     testImplementation 'junit:junit:4.12'
 
